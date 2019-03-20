@@ -10,8 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 	sh 'cd docker-images/service1'
-	sh 'pwd'
-        app = docker.build("rajesh412/nodeapp") -f docker-images/service1/Dockerfile
+        app = docker.build("rajesh412/nodeapp", "./docker-images/service1")
     }
 
     stage('Test image') {
